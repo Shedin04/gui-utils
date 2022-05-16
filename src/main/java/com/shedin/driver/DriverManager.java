@@ -1,11 +1,12 @@
 package com.shedin.driver;
 
+import com.codeborne.selenide.WebDriverRunner;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 
 
 @Log4j2
-public class DriverManager {
+public class DriverManager extends WebDriverRunner {
 	private static WebDriver driver;
 
 	private DriverManager() {}
@@ -24,5 +25,9 @@ public class DriverManager {
 			driver.quit();
 			driver = null;
 		}
+	}
+
+	public static void openURL(String url) {
+		getDriver().get(url);
 	}
 }
