@@ -2,7 +2,7 @@ package com.shedin.driver.strategy;
 
 import com.shedin.utility.ConfigurationHelper;
 
-import static com.shedin.constants.DriverConstants.*;
+import static com.shedin.constants.StringConstants.*;
 
 
 public class BrowserProvider {

@@ -1,33 +1,31 @@
 package com.shedin.driver;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
+import com.shedin.utility.ConfigurationHelper;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
+
+import java.util.Optional;
+
+import static com.shedin.constants.StringConstants.PAGE_PROPERTIES_FILE;
+import static com.shedin.constants.StringConstants.PAGE_URL;
 
 
 @Log4j2
 public class DriverManager extends WebDriverRunner {
-	private static WebDriver driver;
 
 	private DriverManager() {}
 
-	public static WebDriver getDriver() {
-		if (driver == null) {
-			log.info("Driver was started");
-			driver = WebDriverFactory.createNewDriver();
-		}
-		return driver;
+	public static void setDriver() {
+		log.info("Driver was started");
+		WebDriver driver = WebDriverFactory.createNewDriver();
+		Configuration.baseUrl = ConfigurationHelper.getProperty(PAGE_PROPERTIES_FILE, PAGE_URL);
+		WebDriverRunner.setWebDriver(driver);
 	}
 
 	public static void closeDriver() {
-		if (driver != null) {
-			log.info("Driver was closed");
-			driver.quit();
-			driver = null;
-		}
-	}
-
-	public static void openURL(String url) {
-		getDriver().get(url);
+		log.info("Driver was closed");
+		Optional.of(getWebDriver()).ifPresent(WebDriver::quit);
 	}
 }

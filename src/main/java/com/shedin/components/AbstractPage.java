@@ -1,34 +1,25 @@
 package com.shedin.components;
 
-import com.shedin.driver.DriverManager;
 import lombok.extern.log4j.Log4j2;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.shedin.driver.DriverManager.openURL;
+import static com.codeborne.selenide.Selenide.open;
 
 @Log4j2
 public abstract class AbstractPage {
-	private String pageURL;
-	protected WebDriver driver;
+	private String pagePath;
 
-	protected AbstractPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	protected AbstractPage() {}
+
+	private String getPagePath() {
+		return pagePath;
 	}
 
-	public String getPageURL() {
-		return pageURL;
-	}
-
-	public void setPageURL(String pageURL) {
-		this.pageURL = pageURL;
+	protected void setPagePath(String pagePath) {
+		this.pagePath = pagePath;
 	}
 
 	public AbstractPage openPage() {
 		log.info(this.getClass().getSimpleName() + " page was opened");
-		openURL(getPageURL());
-		return this;
+		return open(getPagePath(), this.getClass());
 	}
 }

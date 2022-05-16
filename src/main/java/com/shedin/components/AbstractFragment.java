@@ -1,23 +1,32 @@
 package com.shedin.components;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
+
+import static com.codeborne.selenide.Selenide.$;
+
 
 public abstract class AbstractFragment {
-    private WebElement rootElement;
+    private SelenideElement rootElement;
 
-    protected AbstractFragment(WebDriver driver) {
+    private final By alert = By.cssSelector("error-message");
+
+    protected AbstractFragment() {
     }
 
-    public WebElement getRootElement() {
+    protected SelenideElement getRootElement() {
         return rootElement;
     }
 
-    public void setRootElement(WebElement element) {
+    public void setRootElement(SelenideElement element) {
         this.rootElement = element;
     }
 
     public boolean isDisplayed() {
         return getRootElement().isDisplayed();
+    }
+
+    public boolean isAlertDisplayed() {
+        return $(alert).isDisplayed();
     }
 }
