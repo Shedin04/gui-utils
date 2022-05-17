@@ -9,10 +9,9 @@ import static com.codeborne.selenide.Selenide.$;
 public abstract class AbstractFragment {
     private SelenideElement rootElement;
 
-    private final By alert = By.cssSelector("error-message");
+    private final By alert = By.cssSelector(".error-message-container.error");
 
-    protected AbstractFragment() {
-    }
+    protected AbstractFragment() {}
 
     protected SelenideElement getRootElement() {
         return rootElement;
