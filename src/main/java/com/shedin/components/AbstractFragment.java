@@ -7,25 +7,29 @@ import static com.codeborne.selenide.Selenide.$;
 
 
 public abstract class AbstractFragment {
-    private SelenideElement rootElement;
+	private SelenideElement rootElement;
 
-    private final By alert = By.cssSelector(".error-message-container.error");
+	private final By alert = By.cssSelector(".error-message-container.error");
 
-    protected AbstractFragment() {}
+	protected AbstractFragment() {}
 
-    protected SelenideElement getRootElement() {
-        return rootElement;
-    }
+	protected SelenideElement getRootElement() {
+		return rootElement;
+	}
 
-    public void setRootElement(SelenideElement element) {
-        this.rootElement = element;
-    }
+	public void setRootElement(SelenideElement element) {
+		this.rootElement = element;
+	}
 
-    public boolean isDisplayed() {
-        return getRootElement().isDisplayed();
-    }
+	public boolean isDisplayed() {
+		return getRootElement().isDisplayed();
+	}
 
-    public boolean isAlertDisplayed() {
-        return $(alert).isDisplayed();
-    }
+	public boolean isAlertDisplayed() {
+		return $(alert).isDisplayed();
+	}
+
+	public String getAlertMessage() {
+		return $(alert).getText();
+	}
 }

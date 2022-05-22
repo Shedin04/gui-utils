@@ -10,7 +10,7 @@ public abstract class AbstractPage {
 
 	protected AbstractPage() {}
 
-	private String getPagePath() {
+	public String getPagePath() {
 		return pagePath;
 	}
 
@@ -18,8 +18,8 @@ public abstract class AbstractPage {
 		this.pagePath = pagePath;
 	}
 
-	public AbstractPage openPage() {
+	public void openPage() {
 		log.info(this.getClass().getSimpleName() + " page was opened");
-		return open(getPagePath(), this.getClass());
+		open(getPagePath(), this.getClass());
 	}
 }

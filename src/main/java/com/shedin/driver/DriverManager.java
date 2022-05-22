@@ -28,4 +28,8 @@ public class DriverManager extends WebDriverRunner {
 		log.info("Driver was closed");
 		Optional.of(getWebDriver()).ifPresent(WebDriver::quit);
 	}
+
+	public static String getCurrentURL() {
+		return getWebDriver().getCurrentUrl();
+	}
 }
