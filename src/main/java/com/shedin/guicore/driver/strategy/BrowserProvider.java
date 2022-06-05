@@ -1,8 +1,8 @@
-package com.shedin.driver.strategy;
+package com.shedin.guicore.driver.strategy;
 
-import com.shedin.utility.ConfigurationHelper;
+import com.shedin.guicore.utility.ConfigurationHelper;
 
-import static com.shedin.constants.StringConstants.*;
+import static com.shedin.guicore.constants.StringConstants.*;
 
 
 public class BrowserProvider {

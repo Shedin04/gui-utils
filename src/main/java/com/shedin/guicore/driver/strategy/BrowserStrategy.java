@@ -1,4 +1,4 @@
-package com.shedin.driver.strategy;
+package com.shedin.guicore.driver.strategy;
 
 import org.openqa.selenium.WebDriver;
 

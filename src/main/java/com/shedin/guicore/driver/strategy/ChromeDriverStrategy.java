@@ -1,4 +1,4 @@
-package com.shedin.driver.strategy;
+package com.shedin.guicore.driver.strategy;
 
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;

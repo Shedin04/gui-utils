@@ -1,10 +1,9 @@
-package com.shedin.driver.strategy;
+package com.shedin.guicore.driver.strategy;
 
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver;
 

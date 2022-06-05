@@ -1,4 +1,4 @@
-package com.shedin.components;
+package com.shedin.guicore.components;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;

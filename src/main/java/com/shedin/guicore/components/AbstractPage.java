@@ -1,4 +1,4 @@
-package com.shedin.components;
+package com.shedin.guicore.components;
 
 import lombok.extern.log4j.Log4j2;
 

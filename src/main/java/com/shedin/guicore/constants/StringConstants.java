@@ -1,4 +1,4 @@
-package com.shedin.constants;
+package com.shedin.guicore.constants;
 
 public class StringConstants {
 

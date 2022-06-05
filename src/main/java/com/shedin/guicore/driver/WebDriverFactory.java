@@ -1,6 +1,6 @@
-package com.shedin.driver;
+package com.shedin.guicore.driver;
 
-import com.shedin.driver.strategy.BrowserProvider;
+import com.shedin.guicore.driver.strategy.BrowserProvider;
 import org.openqa.selenium.WebDriver;
 
 
