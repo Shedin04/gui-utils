@@ -1,14 +1,16 @@
 package com.shedin.guicore.components;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Selenide.open;
 
+
 @Log4j2
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class AbstractPage {
 	private String pagePath;
-
-	protected AbstractPage() {}
 
 	public String getPagePath() {
 		return pagePath;
