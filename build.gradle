@@ -1,3 +1,11 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+group 'com.shedin'
+version '1.0'
+
 dependencies {
     api 'org.seleniumhq.selenium:selenium-java:4.1.4'
     api 'io.github.bonigarcia:webdrivermanager:5.1.1'
