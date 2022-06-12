@@ -3,7 +3,9 @@ package com.shedin.guicore.driver.strategy;
 import com.shedin.guicore.utility.ConfigurationHelper;
 import lombok.experimental.UtilityClass;
 
-import static com.shedin.guicore.constants.StringConstants.*;
+import static com.shedin.guicore.constants.StringConstants.BROWSER;
+import static com.shedin.guicore.constants.StringConstants.CHROME;
+import static com.shedin.guicore.constants.StringConstants.DRIVER_PROPERTIES_FILE;
 
 
 @UtilityClass
