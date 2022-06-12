@@ -1,14 +1,17 @@
 package com.shedin.guicore.driver.strategy;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
 
+
 @Log4j2
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 class ChromeDriverStrategy implements BrowserStrategy<ChromeOptions> {
 
 	@Override

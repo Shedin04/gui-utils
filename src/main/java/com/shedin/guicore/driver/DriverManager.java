@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import com.shedin.guicore.constants.StringConstants;
 import com.shedin.guicore.utility.ConfigurationHelper;
+import lombok.experimental.UtilityClass;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 
@@ -11,9 +12,8 @@ import java.util.Optional;
 
 
 @Log4j2
+@UtilityClass
 public class DriverManager extends WebDriverRunner {
-
-	private DriverManager() {}
 
 	public static void setDriver() {
 		log.info("Driver was started");
@@ -27,7 +27,7 @@ public class DriverManager extends WebDriverRunner {
 		Optional.of(getWebDriver()).ifPresent(WebDriver::quit);
 	}
 
-	public static String getCurrentURL(){
+	public static String getCurrentURL() {
 		return getWebDriver().getCurrentUrl();
 	}
 }

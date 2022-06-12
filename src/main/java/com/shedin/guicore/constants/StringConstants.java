@@ -1,8 +1,10 @@
 package com.shedin.guicore.constants;
 
-public class StringConstants {
+import lombok.experimental.UtilityClass;
 
-	private StringConstants() {}
+
+@UtilityClass
+public class StringConstants {
 
 	// browsers //
 	public static final String CHROME = "chrome";

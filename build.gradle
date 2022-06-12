@@ -7,7 +7,6 @@ group 'com.shedin'
 version '1.0'
 
 dependencies {
-    api 'org.seleniumhq.selenium:selenium-java:4.2.1'
     api 'io.github.bonigarcia:webdrivermanager:5.2.0'
     api 'com.codeborne:selenide:6.6.1'
 }

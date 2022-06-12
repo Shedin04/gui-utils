@@ -20,8 +20,8 @@ public abstract class AbstractPage {
 		this.pagePath = pagePath;
 	}
 
-	public void openPage() {
+	public AbstractPage openPage() {
 		log.info(this.getClass().getSimpleName() + " page was opened");
-		open(getPagePath(), this.getClass());
+		return open(getPagePath(), this.getClass());
 	}
 }
