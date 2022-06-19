@@ -16,15 +16,16 @@ import java.util.Optional;
 public class DriverManager extends WebDriverRunner {
 
 	public static void setDriver() {
-		log.info("Driver was started");
 		WebDriver driver = WebDriverFactory.createNewDriver();
 		Configuration.baseUrl = ConfigurationHelper.getProperty(StringConstants.PAGE_PROPERTIES_FILE, StringConstants.PAGE_URL);
 		WebDriverRunner.setWebDriver(driver);
+		log.info("Driver was started");
 	}
 
 	public static void closeDriver() {
-		log.info("Driver was closed");
 		Optional.of(getWebDriver()).ifPresent(WebDriver::quit);
+		WebDriverRunner.closeWebDriver();
+		log.info("Driver was closed");
 	}
 
 	public static String getCurrentURL() {

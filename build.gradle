@@ -8,7 +8,7 @@ version '1.0'
 
 dependencies {
     api 'io.github.bonigarcia:webdrivermanager:5.2.0'
-    api 'com.codeborne:selenide:6.6.1'
+    api 'com.codeborne:selenide:6.6.3'
 }
 
 repositories {
