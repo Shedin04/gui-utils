@@ -1,25 +1,41 @@
 package com.shedin.guicore.utility;
 
 import lombok.experimental.UtilityClass;
-import lombok.extern.log4j.Log4j2;
 
-import java.io.IOException;
-import java.util.Properties;
+import java.util.Locale;
+
+import static com.shedin.guicore.constants.StringConstants.DriverProperties.BROWSER;
+import static com.shedin.guicore.constants.StringConstants.FilePath.DRIVER_PROPERTIES_FILE;
+import static com.shedin.guicore.constants.StringConstants.FilePath.PAGE_PROPERTIES_FILE;
 
 
-@Log4j2
 @UtilityClass
 public class ConfigurationHelper {
+	private static final String PATH = ".path";
+	private static final String SELENIUM_GRID_ENABLED = "selenium.grid.enabled";
+	private static final String GRID_PATH = "selenium.grid.path";
+	private static String browser;
+	private static String gridUrl;
 
-	public static String getProperty(String file, String key) {
-		ClassLoader classLoader = ConfigurationHelper.class.getClassLoader();
-		Properties prop = new Properties();
-		try {
-			prop.load(classLoader.getResourceAsStream(file));
+	public static String getBrowser() {
+		if (browser == null) {
+			browser = ConfigurationService.getProperty(DRIVER_PROPERTIES_FILE, BROWSER);
 		}
-		catch (IOException e) {
-			log.warn(e.getMessage());
+		return browser;
+	}
+
+	public static boolean isGridEnabled() {
+		return Boolean.parseBoolean(ConfigurationService.getProperty(DRIVER_PROPERTIES_FILE, SELENIUM_GRID_ENABLED));
+	}
+
+	public static String getGridPath() {
+		if (gridUrl == null) {
+			gridUrl = ConfigurationService.getProperty(DRIVER_PROPERTIES_FILE, GRID_PATH);
 		}
-		return prop.getProperty(key);
+		return gridUrl;
+	}
+
+	public static String getPagePath(String pageName) {
+		return ConfigurationService.getProperty(PAGE_PROPERTIES_FILE, pageName.toLowerCase(Locale.ROOT) + PATH);
 	}
 }

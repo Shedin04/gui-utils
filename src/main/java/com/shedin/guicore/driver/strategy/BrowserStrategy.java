@@ -5,6 +5,4 @@ import org.openqa.selenium.WebDriver;
 
 public interface BrowserStrategy<T> {
 	WebDriver getBrowserDriver();
-
-	T getCapabilities();
 }
