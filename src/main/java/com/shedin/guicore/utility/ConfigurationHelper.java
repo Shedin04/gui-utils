@@ -5,8 +5,8 @@ import lombok.experimental.UtilityClass;
 import java.util.Locale;
 
 import static com.shedin.guicore.constants.StringConstants.DriverProperties.BROWSER;
-import static com.shedin.guicore.constants.StringConstants.FilePath.DRIVER_PROPERTIES_FILE;
-import static com.shedin.guicore.constants.StringConstants.FilePath.PAGE_PROPERTIES_FILE;
+import static com.shedin.guicore.constants.StringConstants.FilePaths.DRIVER_PROPERTIES_FILE;
+import static com.shedin.guicore.constants.StringConstants.FilePaths.PAGE_PROPERTIES_FILE;
 
 
 @UtilityClass

@@ -16,19 +16,22 @@ public class CapabilitiesHelper {
 
 	public static DesiredCapabilities getCapabilities() {
 		switch (ConfigurationHelper.getBrowser()) {
-			case CHROME:
+			case CHROME: {
 				ChromeOptions chromeOptions = new ChromeOptions();
 				chromeOptions.addArguments("start-maximized");
 				capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 				break;
-			case FIREFOX:
+			}
+			case FIREFOX: {
 				FirefoxOptions firefoxOptions = new FirefoxOptions();
 				firefoxOptions.addArguments("--window-size=1280,1024");
 				capabilities.setCapability(ChromeOptions.CAPABILITY, firefoxOptions);
 				break;
-			default:
+			}
+			default: {
 				throw new IllegalArgumentException(
 						ConfigurationHelper.getBrowser() + " - browser isn't supported");
+			}
 		}
 		return capabilities;
 	}

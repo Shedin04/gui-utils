@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 import static com.shedin.guicore.constants.StringConstants.Browsers.FIREFOX;
 import static com.shedin.guicore.driver.CapabilitiesHelper.getCapabilities;
@@ -16,7 +15,7 @@ import static io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver;
 
 @Log4j2
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class FirefoxDriverStrategy implements BrowserStrategy<FirefoxOptions> {
+public class FirefoxDriverStrategy implements BrowserStrategy {
 
 	@Override
 	public WebDriver getBrowserDriver() {

@@ -10,7 +10,7 @@ public interface StringConstants {
 	}
 
 	// files path //
-	interface FilePath {
+	interface FilePaths {
 		String DRIVER_PROPERTIES_FILE = "driver.properties";
 		String PAGE_PROPERTIES_FILE = "page.properties";
 	}

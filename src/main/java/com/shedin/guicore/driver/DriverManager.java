@@ -17,7 +17,7 @@ public class DriverManager extends WebDriverRunner {
 
 	public static void setDriver() {
 		WebDriver driver = WebDriverFactory.createNewDriver();
-		Configuration.baseUrl = ConfigurationService.getProperty(StringConstants.FilePath.PAGE_PROPERTIES_FILE,
+		Configuration.baseUrl = ConfigurationService.getProperty(StringConstants.FilePaths.PAGE_PROPERTIES_FILE,
 																 StringConstants.DriverProperties.PAGE_URL);
 		WebDriverRunner.setWebDriver(driver);
 		log.info("Driver was started");
