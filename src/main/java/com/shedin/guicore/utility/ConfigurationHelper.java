@@ -5,6 +5,8 @@ import lombok.experimental.UtilityClass;
 import java.util.Locale;
 
 import static com.shedin.guicore.constants.StringConstants.DriverProperties.BROWSER;
+import static com.shedin.guicore.constants.StringConstants.DriverProperties.GRID_PATH;
+import static com.shedin.guicore.constants.StringConstants.DriverProperties.SELENIUM_GRID_ENABLED;
 import static com.shedin.guicore.constants.StringConstants.FilePaths.DRIVER_PROPERTIES_FILE;
 import static com.shedin.guicore.constants.StringConstants.FilePaths.PAGE_PROPERTIES_FILE;
 
@@ -12,8 +14,6 @@ import static com.shedin.guicore.constants.StringConstants.FilePaths.PAGE_PROPER
 @UtilityClass
 public class ConfigurationHelper {
 	private static final String PATH = ".path";
-	private static final String SELENIUM_GRID_ENABLED = "selenium.grid.enabled";
-	private static final String GRID_PATH = "selenium.grid.path";
 	private static String browser;
 	private static String gridUrl;
 

@@ -13,13 +13,13 @@ public class ConfigurationService {
 
 	public static String getProperty(String file, String key) {
 		ClassLoader classLoader = ConfigurationService.class.getClassLoader();
-		Properties prop = new Properties();
+		Properties properties = new Properties();
 		try {
-			prop.load(classLoader.getResourceAsStream(file));
+			properties.load(classLoader.getResourceAsStream(file));
 		}
 		catch (IOException e) {
 			log.warn(e.getMessage());
 		}
-		return prop.getProperty(key);
+		return properties.getProperty(key);
 	}
 }

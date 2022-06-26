@@ -1,28 +1,33 @@
 package com.shedin.guicore.constants;
 
+import lombok.experimental.UtilityClass;
 
-public interface StringConstants {
-	interface Browsers {
 
-	// browsers //
-		String CHROME = "chrome";
-		String FIREFOX = "firefox";
+@UtilityClass
+public final class StringConstants {
+
+	// browsers
+	public enum Browsers {;
+		public static final String CHROME = "chrome";
+		public static final String FIREFOX = "firefox";
 	}
 
-	// files path //
-	interface FilePaths {
-		String DRIVER_PROPERTIES_FILE = "driver.properties";
-		String PAGE_PROPERTIES_FILE = "page.properties";
+	// file paths
+	public enum FilePaths {;
+		public static final String DRIVER_PROPERTIES_FILE = "driver.properties";
+		public static final String PAGE_PROPERTIES_FILE = "page.properties";
 	}
 
-	// properties //
-	interface DriverProperties {
-		String BROWSER = "default.browser";
-		String PAGE_URL = "base.url";
+	// properties
+	public enum DriverProperties {;
+		public static final String BROWSER = "default.browser";
+		public static final String PAGE_URL = "base.url";
+		public static final String SELENIUM_GRID_ENABLED = "selenium.grid.enabled";
+		public static final String GRID_PATH = "selenium.grid.path";
 	}
 
-	// operators //
-	interface BasicOperators {
-		String IS = "is";
+	// operators
+	public enum BasicOperators {;
+		public static final String IS = "is";
 	}
 }
