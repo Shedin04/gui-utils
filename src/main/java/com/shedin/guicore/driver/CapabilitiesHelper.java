@@ -25,7 +25,7 @@ public class CapabilitiesHelper {
 			case FIREFOX: {
 				FirefoxOptions firefoxOptions = new FirefoxOptions();
 				firefoxOptions.addArguments("--window-size=1280,1024");
-				capabilities.setCapability(ChromeOptions.CAPABILITY, firefoxOptions);
+				capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
 				break;
 			}
 			default: {
